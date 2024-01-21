@@ -1,4 +1,6 @@
 $exeFilePath = "$pwd\main.exe"
+$codeFilePath = "$pwd\main.cpp"
+$buildCommand = "g++ -o main $codeFilePath"
 
 function Write-ColorOutput($ForegroundColor)
 {
@@ -23,17 +25,22 @@ if ([System.IO.File]::Exists($exeFilePath)) {
     Remove-Item -Path $exeFilePath
 }
 
-Write-ColorOutput green("Building......")
-g++ -o main main.cpp
+if ([System.IO.File]::Exists($codeFilePath)) {
+    Write-ColorOutput green("Building......")
+    iex $buildCommand
+} else {
+    Write-ColorOutput red("File couldn't found!`n`t'$codeFilePath'")
+    Break Script
+}
 
 if ([System.IO.File]::Exists($exeFilePath)) {
-    $proc = Start-Process $exeFilePath -NoNewWindow -PassThru
+    $runProcess = Start-Process $exeFilePath -NoNewWindow -PassThru
 
     Write-ColorOutput green("Running......`n")
-    $proc.WaitForExit()
+    $runProcess.WaitForExit()
     Write-ColorOutput green("`nFinished.... Deleting exe file.`n")
 
     Remove-Item -Path $exeFilePath
 } else {
-    Write-ColorOutput red("File couldn't found!`n")
+    Write-ColorOutput red("Something went wrong! File couldn't found!`n`t'$exeFilePath'")
 }
