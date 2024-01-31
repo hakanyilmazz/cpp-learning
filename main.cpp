@@ -1,10 +1,12 @@
 #include <iostream>
+#include <conio.h>
 
-int main(int argc, char const *argv[])
+using namespace std;
+
+int main()
 {
-    std::cout << "Hello, world!" << std::endl;
+    cout << "Hello C++ Programming";
+    getch();
 
-    int x;
-    std::cin >> x;
     return 0;
 }
