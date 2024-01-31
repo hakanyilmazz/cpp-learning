@@ -1,12 +1,11 @@
 #include <iostream>
-#include <conio.h>
 
 using namespace std;
 
 int main()
 {
-    cout << "Hello C++ Programming";
-    getch();
+    char ary[] = "C++ Tutorial";
+    cout << "Value of ary is: " << ary << endl;
 
     return 0;
 }
