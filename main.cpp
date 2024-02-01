@@ -18,9 +18,70 @@ void ifElseIntro()
     }
 }
 
+void switchCaseIntro()
+{
+    cout << "Enter a number: ";
+    int num;
+    cin >> num;
+
+    switch (num)
+    {
+    case 1:
+        cout << "1";
+        break;
+    case 2:
+        cout << "2";
+        break;
+    case 3:
+        cout << "3";
+        break;
+    case 4:
+        cout << "4";
+    default:
+        cout << "> 4";
+        break;
+    }
+}
+
+void loopsIntro()
+{
+    for (int i = 0; i < 3; i++)
+    {
+        cout << i << endl;
+    }
+
+    int i = 0;
+    while (i < 3)
+    {
+        cout << i << endl;
+        i++;
+    }
+}
+
+void arraysIntro()
+{
+    int arr[4] = {0, 1, 2, 3};
+    int arr1[] = {0, 1, 2, 3};
+
+    for (int i = 0; i < 4; i++)
+    {
+        cout << arr[i] << " ";
+    }
+
+    cout << endl;
+
+    for (int item : arr1)
+    {
+        cout << item << " ";
+    }
+}
+
 int main()
 {
-    ifElseIntro();
+    // ifElseIntro();
+    // switchCaseIntro();
+    // loopsIntro();
+    arraysIntro();
 
     return 0;
 }
