@@ -84,9 +84,46 @@ void passingArrayToFunction(int arr[])
     }
 }
 
+void pointers()
+{
+    int number = 1;
+    int *numberPtr = &number;
+
+    cout << "Address of number: " << &number << endl;
+    cout << "Address value of numberPtr: " << numberPtr << endl;
+    cout << "Value of numberPtr: " << *numberPtr << endl;
+}
+
+void pointersSwapValues()
+{
+    int x = 1;
+    int y = 10;
+
+    int *xPtr = &x;
+    int *yPtr = &y;
+
+    cout << "Before: " << *xPtr << " - " << *yPtr << endl;
+
+    *xPtr = *xPtr + *yPtr;
+    *yPtr = *xPtr - *yPtr;
+    *xPtr = *xPtr - *yPtr;
+
+    cout << "After: " << *xPtr << " - " << *yPtr << endl;
+}
+
+void pointerToPointer()
+{
+    int x = 1;
+    int *y = &x;
+    int **z = &y;
+
+    cout << x << endl;
+    cout << *y << endl;
+    cout << **z << endl;
+}
+
 int main()
 {
-    int arr[5] = {1, 2, 3, 4, 5};
-    passingArrayToFunction(arr);
+    
     return 0;
 }
