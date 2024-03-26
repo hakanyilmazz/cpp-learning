@@ -1,6 +1,8 @@
-$exeFilePath = "$pwd\main.exe"
-$codeFilePath = "$pwd\main.cpp"
-$buildCommand = "g++ -o main $codeFilePath"
+$file = "helloworld"
+
+$exeFilePath = "$pwd\$file.exe"
+$codeFilePath = "$pwd\$file.cpp"
+$buildCommand = "g++ -o $file $codeFilePath"
 
 function Write-ColorOutput($ForegroundColor)
 {
